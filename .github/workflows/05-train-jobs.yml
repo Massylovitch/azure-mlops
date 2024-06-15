@@ -39,4 +39,4 @@ jobs:
       run: |
         az configure --defaults group=mlops-learn-rg
         az configure --defaults workspace=mlops-learn-ws
-        az ml job create --file src/prod-job.yml --stream
+        az ml job create --file src/prod_job.yml --stream
