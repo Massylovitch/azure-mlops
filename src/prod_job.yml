@@ -4,13 +4,15 @@ command: >-
   python 
   train.py
   --training_data ${{inputs.training_data}}
-  --experiment_name ${{experiment_name}}
+  --experiment_name ${{inputs.experiment_name}}
+  --reg_rate ${{inputs.reg_rate}}
 inputs:
   training_data: 
     mode: ro_mount
     type: uri_folder 
     path: azureml:diabetes-prod-folder:1
   reg_rate: 0.01
+  experiment_name: mlflow-experiment-diabetes-prod
 environment: azureml:AzureML-sklearn-0.24-ubuntu18.04-py37-cpu@latest
 compute: mlopslearncluster
 experiment_name: mlflow-experiment-diabetes-prod
