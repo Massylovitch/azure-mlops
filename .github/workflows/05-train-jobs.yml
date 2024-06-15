@@ -43,3 +43,4 @@ jobs:
     - name: Deploy Endpoint
       run: |
         az ml online-endpoint create --name diabetes-endpoint -f src/create-endpoint.yml
+        az ml online-deployment create --name diabetes-deployment --endpoint diabetes-endpoint -f src/mlflow-deployment.yml --all-traffic
