@@ -4,6 +4,7 @@ command: >-
   python 
   train.py
   --training_data ${{inputs.training_data}}
+  --experiment_name ${{experiment_name}}
 inputs:
   training_data: 
     type: uri_folder 
