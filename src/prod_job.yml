@@ -12,5 +12,5 @@ inputs:
   reg_rate: 0.01
 environment: azureml:AzureML-sklearn-0.24-ubuntu18.04-py37-cpu@latest
 compute: mlopslearncluster
-experiment_name: mlflow-experiment-diabetes-prod
+experiment_name: mlflow-experiment-diabetes
 description: "Mlops Experimentaiton for Production data"
