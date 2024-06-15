@@ -8,7 +8,7 @@ inputs:
   training_data: 
     mode: ro_mount
     type: uri_folder 
-    path: https://mlopsleastorageb709ca49b.blob.core.windows.net/azureml-blobstore-f15d9c60-a967-4542-b23f-487bdb406a34/UI/2024-06-15_120141_UTC/data/
+    path: azureml:diabetes-prod-folder:1
   reg_rate: 0.01
 environment: azureml:AzureML-sklearn-0.24-ubuntu18.04-py37-cpu@latest
 compute: mlopslearncluster
