@@ -1,7 +1,7 @@
 name: Train dev/prod models
 
 on:
-  push:
+  [push, workflow_dispatch]
 
 jobs:
   dev-train:
