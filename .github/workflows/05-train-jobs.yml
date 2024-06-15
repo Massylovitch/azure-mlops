@@ -40,3 +40,6 @@ jobs:
         az configure --defaults group=mlops-learn-rg
         az configure --defaults workspace=mlops-learn-ws
         az ml job create --file src/prod_job.yml --stream
+    - name: Deploy Endpoint
+      run: |
+        az ml online-endpoint create --name diabetes-endpoint -f src/create-endpoint.yml
