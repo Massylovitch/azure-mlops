@@ -4,11 +4,14 @@ command: >-
   python 
   train.py
   --training_data ${{inputs.training_data}}
+  --reg_rate ${{inputs.reg_rate}}
+  --experiment_name ${{inputs.experiment_name}}
 inputs:
   training_data: 
     type: uri_folder 
     path: ../experimentation/data
   reg_rate: 0.01
+  experiment_name: mlflow-experiment-diabetes
 environment: azureml:AzureML-sklearn-0.24-ubuntu18.04-py37-cpu@latest
 compute: mlopslearncluster
 experiment_name: mlflow-experiment-diabetes

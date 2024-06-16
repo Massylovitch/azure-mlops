@@ -14,7 +14,7 @@ import mlflow
 # define functions
 def main(args):
     # TO DO: enable autologging
-    experiment_name = "mlflow-experiment-diabetes"
+    experiment_name = args.experiment_name
     mlflow.set_experiment(experiment_name)
 
     with mlflow.start_run():
@@ -63,6 +63,8 @@ def parse_args():
                         type=str)
     parser.add_argument("--reg_rate", dest='reg_rate',
                         type=float, default=0.01)
+    parser.add_argument("--experiment_name", dest='experiment_name',
+                        type=str)
 
     # parse args
     args = parser.parse_args()
