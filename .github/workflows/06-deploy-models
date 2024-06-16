@@ -1,0 +1,26 @@
+name: Deploy prod models
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy models:
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+    - name: Check out repo
+      uses: actions/checkout@main
+    - name: Install az ml extension
+      run: az extension add -n ml -y
+    - name: Azure login
+      uses: azure/login@v1
+      with:
+        creds: ${{secrets.AZURE_CREDENTIALS}}
+    - name: Configure env
+      run: |
+        az configure --defaults group=mlops-learn-rg
+        az configure --defaults workspace=mlops-learn-ws
+    - name: Deploy Endpoint
+      run: |
+        az ml online-endpoint create --name diabetes-endpoint -f src/create-endpoint.yml
+        az ml online-deployment create --name diabetes-deployment --endpoint diabetes-endpoint -f src/mlflow-deployment.yml --all-traffic
