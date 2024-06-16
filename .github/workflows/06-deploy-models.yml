@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  deploy models:
+  deploy_models:
     runs-on: ubuntu-latest
     environment: production
     steps:
