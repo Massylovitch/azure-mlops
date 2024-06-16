@@ -1,4 +1,6 @@
 $schema: https://azuremlschemas.azureedge.net/latest/managedOnlineDeployment.schema.json
-model: azureml://locations/westeurope/workspaces/f15d9c60-a967-4542-b23f-487bdb406a34/models/diabetes-model/versions/1
-instance_type: Standard_F4s_v2
+name: blue
+endpoint_name: endpoint-online-4
+model: azureml:diabetes-model@latest
+instance_type: Standard_DS4_v2
 instance_count: 1
