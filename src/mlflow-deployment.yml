@@ -2,7 +2,7 @@ $schema: https://azuremlschemas.azureedge.net/latest/managedOnlineDeployment.sch
 model:
   name: diabete-mlflow-sklearn-model
   version: 1
-  path: diabetes-model/model
+  path: azureml://locations/westeurope/workspaces/f15d9c60-a967-4542-b23f-487bdb406a34/models/diabetes-model/versions/1
   type: mlflow_model
 instance_type: Standard_F4s_v2
 instance_count: 1
